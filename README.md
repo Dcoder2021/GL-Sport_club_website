@@ -1,6 +1,7 @@
 # Sample_company_website
 
 Main technologies used, 
+
 ○ HTML 5
 
 ○ CSS 3
