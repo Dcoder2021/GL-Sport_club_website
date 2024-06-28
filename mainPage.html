@@ -31,10 +31,10 @@
                     <i class="fa-solid fa-bars" onclick="openmenu()"></i>
                 </ul>
 
-                <div class="lang-switch">
-                     <button id="lang-en" type="button">English</button>
-                     <button id="lang-es" type="button">Spanish</button>
-                </div>
+                <select id="language-switcher">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                </select>
                 
             </nav>
             </div>
@@ -209,24 +209,28 @@
   <!-------------------------inline ES6 Scripts for Language Switcher ---------------------------------->
 
   <script>
-
     class LanguageSwitcher {
         constructor() {
-            this.enButton = document.getElementById('lang-en');
-            this.esButton = document.getElementById('lang-es');
-            this.enButton.addEventListener('click', this.switchToEnglish.bind(this));
-            this.esButton.addEventListener('click', this.switchToSpanish.bind(this));
+            this.languageSwitcher = document.getElementById('language-switcher');
+            this.languageSwitcher.addEventListener('change', this.switchLanguage.bind(this));
             this.currentLanguage = 'en'; // Default language English
-            this.updateLanguage();
+            this.translations = {};
+            this.loadTranslations().then(() => {
+                this.updateLanguage();
+            });
         }
 
-        switchToEnglish() {
-            this.currentLanguage = 'en';
-            this.updateLanguage();
+        async loadTranslations() {
+            try {
+                const response = await fetch('translations.json');
+                this.translations = await response.json();
+            } catch (error) {
+                console.error('Error loading translations:', error);
+            }
         }
 
-        switchToSpanish() {
-            this.currentLanguage = 'es';
+        switchLanguage() {
+            this.currentLanguage = this.languageSwitcher.value;
             this.updateLanguage();
         }
 
@@ -234,34 +238,16 @@
             const langElements = document.querySelectorAll('[data-lang]');
             langElements.forEach(element => {
                 const key = element.getAttribute('data-lang');
-                element.textContent = this.translations[this.currentLanguage][key];
+                if (this.translations[this.currentLanguage] && this.translations[this.currentLanguage][key]) {
+                    element.textContent = this.translations[this.currentLanguage][key];
+                }
             });
         }
-
-
-        translations = {
-            'en': {
-                'About Us': 'About Us',
-                'Features': 'Features',
-                'Contact': 'Contact',
-                'welcome': 'Welcome to our Company...',
-                "description":"Welcome to our sports emporium, where champions find their gear.",
-                "description2":"Explore top-quality equipment for every sport enthusiast's needs!"
-            },
-            'es': {
-                'About Us': 'Inicio',
-                'Features': 'Servicios',
-                'Contact': 'Contacto',
-                'welcome': 'Bienvenido a nuestra empresa...',
-                "description": "Bienvenido a nuestro emporio deportivo, donde los campeones encuentran su equipo.",
-                "description2": "Descubra equipamiento de alta calidad para todos los amantes del deporte."
-            }
-        };
     }
 
     document.addEventListener('DOMContentLoaded', function () {
         const langSwitcher = new LanguageSwitcher();
     });
-    </script>
+</script>
 
 </html>

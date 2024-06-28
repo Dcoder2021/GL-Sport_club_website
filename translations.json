@@ -1,0 +1,18 @@
+{
+    "en": {
+        "About Us": "About Us",
+        "Features": "Features",
+        "Contact": "Contact",
+        "welcome": "Welcome to our Company...",
+        "description": "Welcome to our sports emporium, where champions find their gear.",
+        "description2": "Explore top-quality equipment for every sport enthusiast's needs!"
+    },
+    "es": {
+        "About Us": "Inicio",
+        "Features": "Servicios",
+        "Contact": "Contacto",
+        "welcome": "Bienvenido a nuestra empresa...",
+        "description": "Bienvenido a nuestro emporio deportivo, donde los campeones encuentran su equipo.",
+        "description2": "Descubra equipamiento de alta calidad para todos los amantes del deporte."
+    }
+}
