@@ -5,7 +5,8 @@
         "Contact": "Contact",
         "welcome": "Welcome to our Club...",
         "description": "Welcome to GL Sports Club, where fitness and sports excellence meet.",
-        "description2": "Discover top-notch gym facilities and indoor sports training today!"
+        "description2": "Discover top-notch gym facilities and indoor sports training today!",
+        "seemore": "See More"
     },
     "es": {
         "About Us": "எங்களை பற்றி",
@@ -13,6 +14,7 @@
         "Contact": "தொடர்பு கொள்ளவும்",
         "welcome": "எங்கள் கிளப்பிற்கு வரவேற்கிறோம்...",
         "description": "ஜிஎல் ஸ்போர்ட்ஸ் கிளப்பிற்கு வரவேற்கிறோம், அங்கு உடற்பயிற்சி மற்றும் விளையாட்டு சிறப்பம்சங்கள் சந்திக்கின்றன.",
-        "description2": "இன்றே சிறந்த ஜிம் வசதிகள் மற்றும் உட்புற விளையாட்டுப் பயிற்சிகளைக் கண்டறியவும்!"
+        "description2": "இன்றே சிறந்த ஜிம் வசதிகள் மற்றும் உட்புற விளையாட்டுப் பயிற்சிகளைக் கண்டறியவும்!",
+        "seemore": "மேலும் பார்க்க"
     }
 }
