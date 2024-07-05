@@ -139,7 +139,6 @@ nav ul li a:hover::after{
     display: block;
     unicode-bidi: isolate;
     padding: 40px;
-       
 }
 
 .head2{
@@ -216,7 +215,7 @@ nav ul li a:hover::after{
   
   .card-content {
     padding: 10px;
-    background: #d3d1d1;
+    background: #b8d5eb;
     color: #060606;
   } 
   
